@@ -4,26 +4,28 @@ import linkList.singly.SinglyLinkedList.Node;
 
 public class InsertNode {
 
-	Node node;
+	Node head;
+	Traversal traversal;
 
-	public InsertNode(Node node, String position) {
-		switch (position) {
-		case "starting":
-			
-			break;
-		case "in-between":
-
-			break;
-		case "ending":
-
-			break;
-		default:
-			break;
-		}
+	public InsertNode(Node node) {
+		head = node;
+		traversal = new Traversal(head);
 	}
-	
-	public void push() {
-		
+
+	public Node push(Node newNode) {
+		newNode.next = head;
+		return newNode;
+	}
+
+	public void append(Node newNode) {
+		Node lastNode = traversal.getLastNode(head);
+		lastNode.next = newNode;
+	}
+
+	public void insertAfter(Node newNode, int index) {
+		Node tempNode = traversal.getNodeAtIndex(index);
+		newNode.next = tempNode.next;
+		tempNode.next = newNode;
 	}
 
 }
