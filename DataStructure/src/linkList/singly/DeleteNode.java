@@ -10,8 +10,9 @@ public class DeleteNode {
 		head = node;
 	}
 
-	public void deleteByKey(int key) {
+	public void byKey(int key) {
 		Node node = head;
+		
 		while (node.next != null) {
 			if (node.next.data == key) {
 				node.next = node.next.next;
@@ -21,7 +22,17 @@ public class DeleteNode {
 		}
 	}
 
-	public void deleteByIndex(int index) {
-
+	public void byIndex(int index) {
+		Node node = head;
+		int counter = 0;
+		
+		while (node.next != null) {
+			if (counter == index - 1) {
+				node.next = node.next.next;
+			} else {
+				node = node.next;
+			}
+			counter++;
+		}
 	}
 }

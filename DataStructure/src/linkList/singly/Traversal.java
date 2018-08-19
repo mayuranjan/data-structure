@@ -10,6 +10,7 @@ public class Traversal {
 		if (head.next != null) {
 			printData(head);
 		}
+		System.out.println();
 	}
 
 	public void printData(Node node) {
