@@ -71,6 +71,11 @@ public class SinglyLinkedList {
 		insertNode.append(new Node(6));
 		new Traversal(singlyLinkedList.head);
 		middleNode.print(singlyLinkedList.head);
+		
+		Reverse reverse = new Reverse(singlyLinkedList.head);
+		singlyLinkedList.head = reverse.getReversedList();
+
+		new Traversal(singlyLinkedList.head);
 	}
 
 	public void createLinkedList() {
